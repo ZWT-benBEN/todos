@@ -1,0 +1,221 @@
+@font-face {
+  font-family: 'tubiao';
+  src: url("iconfont (5)/iconfont.woff") format("woff"); }
+
+.rili {
+  font-family: 'tubiao'; }
+
+html {
+  font-size: 100px; }
+
+* {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  position: relative; }
+
+body {
+  font-size: 0.2rem; }
+
+.box {
+  width: 100%;
+  height: 0.8rem;
+  border: 1px solid yellow;
+  box-sizing: border-box; }
+  .box h1 {
+    font-family: HelveticaExtObl-Light;
+    color: #666666;
+    text-align: center;
+    line-height: 0.8rem;
+    font-size: 0.38rem;
+    font-weight: 200;
+    background: #28D8FF;
+    color: #fff;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0; }
+    .box h1 span {
+      font-family: 'tubiao';
+      font-size: 0.28rem; }
+      .box h1 span:nth-child(1) {
+        position: absolute;
+        left: 0.3rem; }
+      .box h1 span:nth-child(2) {
+        position: absolute;
+        right: 0.3rem; }
+
+.header {
+  width: 100%;
+  height: 0.8rem;
+  position: fixed;
+  z-index: 2;
+  top: 0.8rem;
+  left: 0;
+  background: #ececec; }
+  .header input {
+    display: block;
+    width: 90%;
+    height: 0.4rem;
+    border: none;
+    outline: none;
+    background: #FFFDEF;
+    border-radius: 0.3rem;
+    padding-left: 0.2rem;
+    box-sizing: border-box;
+    font-size: 0.16rem;
+    position: absolute;
+    top: 0.2rem;
+    right: 5%; }
+
+.box .todo {
+  width: 100%;
+  height: auto;
+  position: relative;
+  top: 1.6rem;
+  left: 0;
+  bottom: 0.6rem; }
+  .box .todo .todos {
+    width: 90%;
+    height: 0.8rem;
+    line-height: 0.8rem;
+    border-radius: 0.3rem;
+    box-shadow: 0.05rem 0.05rem 0.05rem 0rem #ccc;
+    box-sizing: border-box;
+    margin-top: 0.2rem;
+    margin-left: 5%; }
+    .box .todo .todos .check {
+      width: 0.4rem;
+      height: 0.4rem;
+      border-radius: 50%;
+      background: #2AD3F7;
+      float: left;
+      text-align: center;
+      line-height: 0.4rem;
+      box-shadow: 0.01rem #ddd;
+      box-sizing: border-box;
+      margin-left: 0.2rem;
+      margin-top: 0.2rem; }
+    .box .todo .todos P {
+      width: 2.5rem;
+      float: left;
+      padding-left: 0.2rem;
+      box-sizing: border-box;
+      line-height: 0.8rem;
+      font-size: 0.3rem;
+      color: #333; }
+    .box .todo .todos .del {
+      width: 0.2rem;
+      height: 0.2rem;
+      border-radius: 50%;
+      border: 0.01rem solid  orangered;
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      right: 0.2rem;
+      margin: auto;
+      text-align: center;
+      line-height: 0.2rem;
+      color: orangered; }
+    .box .todo .todos input {
+      display: block;
+      width: 100%;
+      height: 0.5rem;
+      border: none;
+      border: 0.01rem solid #ddd;
+      box-shadow: 0.02rem 0.02rem 0.02rem #333;
+      position: absolute;
+      top: 0;
+      left: 0;
+      padding-left: 0.2rem;
+      box-sizing: border-box;
+      display: none; }
+  .box .todo .todos.wancheng .check {
+    background: #FFDE00;
+    color: #333; }
+  .box .todo .todos.wancheng p {
+    text-decoration: line-through;
+    color: #acacac; }
+  .box .todo .todos.shuru .check {
+    display: none; }
+  .box .todo .todos.shuru .del {
+    display: none; }
+  .box .todo .todos.shuru p {
+    display: none; }
+  .box .todo .todos.shuru input {
+    display: block; }
+
+.footer {
+  width: 100%;
+  height: 0.6rem;
+  margin-top: 0.2rem;
+  border: 0.01rem solid #ccc;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  z-index: 2;
+  background: #ececec; }
+  .footer .shu {
+    width: 0.4rem;
+    height: 0.6rem;
+    line-height: 0.6rem;
+    color: #333;
+    text-align: center;
+    float: left;
+    margin-right: 0.1rem;
+    margin-left: 0.2rem; }
+  .footer span {
+    width: auto;
+    height: 100%;
+    line-height: 0.6rem;
+    border: 0.01rem solid #ccc;
+    padding: 0.1rem;
+    font-size: 0.16rem;
+    border-radius: 0.25rem; }
+  .footer .qing {
+    width: auto;
+    height: 0.6rem;
+    line-height: 0.6rem;
+    padding: 0 0.1rem;
+    box-sizing: border-box;
+    position: absolute;
+    right: 0.15rem;
+    top: 0;
+    color: #ACACAC;
+    font-size: 0.12rem; }
+
+.act {
+  background: #28D8FF; }
+
+.todo .todos {
+  transition: all .8s ease; }
+
+.todo .todos.ng-enter {
+  transform: translateX(100%); }
+
+.todo .todos.ng-enter-active {
+  transform: translateX(0); }
+
+.todo .todos.ng-leave {
+  transform: translateX(0);
+  opacity: 1; }
+
+.todo .todos.ng-leave-active {
+  transition: all .8s ease;
+  transform: translateX(-100%);
+  opacity: 0; }
+
+/*.box{
+  width: 500px;
+  height: 500px;
+  background: yellowgreen;
+  margin: auto;
+  .xiao{
+    width: 100px;
+    height: 100px;
+    margin-right: 20px;
+    background: yellow;
+    float: left;
+    margin-bottom: 20px;
+  }
+}*/

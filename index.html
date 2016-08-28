@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en" ng-app="todo">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,user-scalable=no">
+    <title>Document</title>
+    <script src="js/jquery.js"></script>
+    <!--<script src="js/index.js"></script>-->
+    <script src="js/angular.js"></script>
+    <script src="js/angular-animate.js"></script>
+    <script src="js/main.js"></script>
+    <!--<script src="js/todo.js"></script>-->
+    <link rel="stylesheet" href="css/index.css">
+</head>
+<body ng-controller="main">
+	
+
+ <div class="box">
+        <h1><span>&#xe6f0;</span>{{title}}<span>&#xe63f;</span></h1>
+        <div class="header">
+        <input type="text" placeholder="请输入" ng-model="name" ng-keyup="add($event)"/>
+        </div>
+        <!--ng-init="aa=false"  ng-class="{shuru:aa}" ng-dblclick="aa=true" -->
+        <ul class="todo" ng-init = "chakan=''" >
+			<li class="todos"  
+				ng-init="aa=false" 				ng-class="{shuru:aa,wancheng:v.isdone}" 				ng-dblclick="aa=true;focus($event)" 
+				ng-repeat = "v in todox | filter:{isdone:chakan} track by v.id">
+				<div class="check" ng-click="v.isdone=!v.isdone;save()"></div>
+				<div class="del" ng-click="delete(v.id)">!</div>
+				<p>{{v.name}}</p>
+				<input type="text" ng-model="v.name" ng-blur="aa=false"/>
+			</li>
+			
+        </ul>
+   
+ 		<div class="footer">
+ 			<div class="shu" ng-bind="(todox | filter:{isdone:chakan}).length"></div>
+ 			<div class="qing" ng-click="clear();save()">清除已完成</div>
+ 			<span ng-click="chakan='';change('quanbu')" ng-class="{act:(chakan==='')}">查看全部</span>
+ 			<span ng-click="chakan=true;change('yiwancheng')" ng-class="{act:(chakan===true)}">已完成</span>
+ 			<span ng-click="chakan=false;change('weiwancheng')" ng-class="{act:(chakan===false)}">未完成</span>
+ 		</div>
+ </div>
+<!--   <h1 id="jia">+</h1>
+<div class="box">
+    <div class="xiao"></div>
+    <div class="xiao"></div>
+    <div class="xiao"></div>
+    <div class="xiao"></div>
+</div>-->
+</body>
+</html>
